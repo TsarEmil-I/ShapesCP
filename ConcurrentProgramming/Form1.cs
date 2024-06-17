@@ -35,10 +35,12 @@ namespace ConcurrentProgramming
         }
 
         public void ThreadM()
-        {
+        { 
             for (int i = 0; i < 100; i++)
             {
-                this.CreateGraphics().DrawRectangle(new Pen(Brushes.Red, 4), new Rectangle(rdm.Next(0, this.Width), rdm.Next(0, this.Height), 20, 20));
+                Color cl = Color.FromArgb(rdm.Next(256), rdm.Next(256), rdm.Next(256));
+
+                this.CreateGraphics().DrawRectangle(new Pen(cl, 4), new Rectangle(rdm.Next(0, this.Width), rdm.Next(0, this.Height), rdm.Next(0, 20), rdm.Next(0, 20)));
                 Thread.Sleep(100);
             }
 
@@ -50,7 +52,6 @@ namespace ConcurrentProgramming
             
             for (int i = 0; i < 100; i++)
             {
-                this.CreateGraphics().DrawPolygon(new Pen(Brushes.Yellow, 4), new Polygon(rdm.Next(0, Width), rdm.Next(0, this.Height), 20));
                 Thread.Sleep(100);
             }
 
@@ -61,7 +62,7 @@ namespace ConcurrentProgramming
         {
             for (int i = 0; i < 100; i++)
             {
-                this.CreateGraphics().DrawRectangle(new Pen(Brushes.Blue, 4), new (rdm.Next(0, this.Width), rdm.Next(0, this.Height), 20, 20));
+                this.CreateGraphics().DrawEllipse(new Pen(Brushes.Blue, 4), rdm.Next(0, this.Width), rdm.Next(0, this.Height), rdm.Next(0, 20), rdm.Next(0, 20));
                 Thread.Sleep(100);
             }
 
