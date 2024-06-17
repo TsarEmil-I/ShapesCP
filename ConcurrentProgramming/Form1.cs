@@ -41,7 +41,7 @@ namespace ConcurrentProgramming
                 Color cl = Color.FromArgb(rdm.Next(256), rdm.Next(256), rdm.Next(256));
 
                 this.CreateGraphics().DrawRectangle(new Pen(cl, 4), new Rectangle(rdm.Next(0, this.Width), rdm.Next(0, this.Height), rdm.Next(0, 20), rdm.Next(0, 20)));
-                Thread.Sleep(100);
+                Thread.Sleep(3000);
             }
 
             MessageBox.Show("completed");
@@ -52,7 +52,7 @@ namespace ConcurrentProgramming
             
             for (int i = 0; i < 100; i++)
             {
-                Thread.Sleep(100);
+                Thread.Sleep(2000);
             }
 
             MessageBox.Show("completed");
@@ -62,8 +62,10 @@ namespace ConcurrentProgramming
         {
             for (int i = 0; i < 100; i++)
             {
-                this.CreateGraphics().DrawEllipse(new Pen(Brushes.Blue, 4), rdm.Next(0, this.Width), rdm.Next(0, this.Height), rdm.Next(0, 20), rdm.Next(0, 20));
-                Thread.Sleep(100);
+                Color cl = Color.FromArgb(rdm.Next(256), rdm.Next(256), rdm.Next(256));
+
+                this.CreateGraphics().DrawEllipse(new Pen(cl, 4), rdm.Next(0, this.Width), rdm.Next(0, this.Height), rdm.Next(0, 20), rdm.Next(0, 20));
+                Thread.Sleep(4000);
             }
 
             MessageBox.Show("completed");
